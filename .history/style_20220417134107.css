@@ -1,0 +1,351 @@
+:root {
+  --BlackColor: #000000;
+  --BLueColor: #1e90ff;
+  --WhiteColor: #fdfdfd;
+  --GrayColor: #383838;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: var(--WhiteColor);
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+  border: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+.bg-header {
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  /* -webkit-mask-image: linear-gradient(344deg, black 50%, transparent 100%); */
+  /* mask-image: linear-gradient(180deg, black 50%, transparent 100%); */
+}
+.bg-poster {
+  background-image: url("https://cdx.monstercat.com?encoding=webp&url=https%3A%2F%2Fwww.monstercat.com%2Frelease%2FMCLP017%2Fcover&width=1024");
+  filter: blur(5px) brightness(38%);
+  height: 102%;
+  width: 102%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.header .content {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  position: relative;
+  align-items: center;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.list-icon {
+  font-size: 18px;
+  list-style: none;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  padding: 0;
+  width: 50px;
+  text-align: center;
+  pointer-events: initial;
+  margin-right: 1.2rem;
+  z-index: -1;
+}
+
+.list-icon li {
+  display: block;
+  margin: 1em 0.5em;
+}
+.list-icon li a {
+  display: block;
+  color: var(--WhiteColor);
+}
+.bar {
+  cursor: pointer;
+}
+.bar a {
+  color: var(--WhiteColor);
+  font-size: 24px;
+  pointer-events: none;
+}
+.navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  bottom: 0;
+  background-color: var(--BlackColor);
+  z-index: 100000;
+  transform: translateX(100%);
+  transition: all 0.25s linear;
+}
+.navigation.active {
+  transform: translateX(0%);
+}
+.navigation .top {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  align-items: center;
+}
+.navigation .top img {
+  width: 200px;
+}
+.navigation .top .remove {
+  font-size: 28px;
+  color: var(--WhiteColor);
+  font-weight: 800;
+  cursor: pointer;
+}
+.navigation .scroller {
+  overflow: auto;
+  margin-right: 2rem;
+  height: 350px;
+}
+.scroller-menu .has-menu {
+  display: flex;
+  gap: 0 10px;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 800;
+}
+.scroller-menu li {
+  margin-bottom: 24px;
+}
+.scroller-menu .has-menu a {
+  color: var(--WhiteColor);
+  text-decoration: none;
+  pointer-events: none;
+}
+.scroller-menu .has-menu ion-icon {
+  color: var(--WhiteColor);
+  pointer-events: none;
+}
+.sub-menu {
+  margin: 0px 0px 0px 1rem;
+  list-style: none;
+  padding: 1rem 0px 0px;
+  font-size: 14px;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all 0.25s linear;
+  display: none;
+  font-size: 16px;
+  font-weight: 800;
+}
+.sub-menu li {
+  display: block;
+  margin: 10px 0;
+}
+.sub-menu li a {
+  text-decoration: none;
+  color: var(--WhiteColor);
+}
+.sub-menu.active {
+  height: auto;
+  overflow: auto;
+  visibility: visible;
+  display: block;
+}
+.list-monster {
+  display: flex;
+  gap: 0 20px;
+  margin-right: 2rem;
+  padding: 2rem;
+}
+.double-btn {
+  margin-right: 2rem;
+  padding: 2rem;
+}
+.double-btn .btn,
+.right-btn .btn {
+  border: 0;
+  outline: none;
+  color: var(--WhiteColor);
+  cursor: pointer;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+.double-btn .btn:nth-child(1) {
+  background-color: var(--BlackColor);
+  border: 1px solid #fdfdfd;
+}
+.double-btn .btn:nth-child(1):hover {
+  background: #f1f1f1;
+  color: black;
+  border-color: #f1f1f1;
+  transition: color 100ms linear, background-color 100ms linear;
+}
+
+.btn:nth-child(2) {
+  background-color: transparent;
+}
+/* main */
+.landscape {
+  background-color: #000000;
+}
+.landscape .banner {
+  max-width: 960px;
+  margin: 7rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0 20px;
+}
+.banner-left {
+}
+.banner-left .left-img {
+  width: 408px;
+  height: 408px;
+  position: relative;
+}
+.banner-left .left-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.textPosition {
+  color: var(--WhiteColor);
+  font-style: italic;
+  position: absolute;
+  top: 440px;
+
+  transform: rotate(270deg) translateY(-170px);
+}
+.textPosition span {
+  color: #50a584;
+}
+.banner-right {
+}
+.banner-right-heading {
+  font-size: 32px;
+  /* color: #f1f1f1; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #f1f1f1;
+  -webkit-text-fill-color: transparent;
+}
+.right-img {
+  display: flex;
+  gap: 0 30px;
+  margin-bottom: 32px;
+}
+.banner-right-singer {
+  font-size: 28px;
+  color: var(--WhiteColor);
+  padding: 16px 0 24px;
+}
+.imgCircle {
+  width: 96px;
+
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.imgCircle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.right-btn .btn {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+}
+@media (max-width: 1024px) {
+  .header .content {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+  }
+  .list-icon {
+    position: relative;
+    font-size: 18px;
+    list-style: none;
+    position: unset;
+    display: flex;
+    color: var(--WhiteColor);
+    z-index: 10;
+    margin: 0 auto;
+    width: auto;
+
+    align-items: center;
+  }
+  .list-icon li {
+    color: var(--WhiteColor);
+  }
+  .landscape .banner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px 0;
+    align-items: center;
+    max-width: 768px;
+  }
+  .banner-left {
+    padding: 20px;
+  }
+  .banner-left .left-img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 600px) {
+  .list-icon {
+    display: none;
+  }
+}
